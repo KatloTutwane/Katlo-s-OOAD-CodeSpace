@@ -1,5 +1,5 @@
 
-public class InvestmentAccount extends Account implements Interest, Withdrawable {
+public class InvestmentAccount extends Account implements Interest{
     private double interestRate;
     private String maturityDate;
 
@@ -19,12 +19,7 @@ public class InvestmentAccount extends Account implements Interest, Withdrawable
         }
     }
 
-    @Override
-    public void withdraw(double amount) throws InsufficientFundsException {
-        if (amount <= 0) throw new IllegalArgumentException("Withdraw amount must be positive");
-        if (amount > balance) throw new InsufficientFundsException("Insufficient funds");
-        balance -= amount;
-    }
+
 
 
 
