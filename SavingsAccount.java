@@ -1,4 +1,4 @@
-public class SavingsAccount extends Account implements Withdrawable, Interest {
+public class SavingsAccount extends Account implements Interest {
     private double interestRate;
 
     public SavingsAccount(String branch, double initialDeposit, double interestRate) {
@@ -14,16 +14,7 @@ public class SavingsAccount extends Account implements Withdrawable, Interest {
         this.interestRate = interestRate;
     }
 
-    @Override
-    public void withdraw(double amount) throws InsufficientFundsException {
-        if (amount <= 0) {
-            throw new IllegalArgumentException("Withdraw amount must be positive");
-        }
-        if (amount > balance) {
-            throw new InsufficientFundsException("Insufficient funds");
-        }
-        balance -= amount;
-    }
+
 
     @Override
     public void applyInterest() { // Fixed: Capital 'I' to match interface
