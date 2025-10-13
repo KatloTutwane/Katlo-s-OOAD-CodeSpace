@@ -1,0 +1,30 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/java
+{
+  "name": "Katlo'sJava",
+  "image": "mcr.microsoft.com/devcontainers/java:1-21-bullseye",
+
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "none",
+      "installMaven": "true",
+      "installGradle": "false"
+    },
+    "ghcr.io/devcontainers-contrib/features/ant-sdkman:2": {}
+  },
+
+  // Optional: automatically run a command after container creation
+  "postCreateCommand": "echo \"Dev Container is ready.\" > setup_log.txt",
+
+  // VS Code setup (extensions, etc.)
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "streetsidesoftware.code-spell-checker",
+        "vscjava.vscode-java-pack"
+      ]
+    }
+  }
+
+  // "remoteUser": "root" // Uncomment if you want root access
+}
