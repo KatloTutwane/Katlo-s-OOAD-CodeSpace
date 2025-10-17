@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="Controller.TransferFundsController"
+      spacing="20"
+      alignment="TOP_CENTER"
+      stylesheets="@style.css"
+      styleClass="root">
+
+    <Label text="Transfer Funds" styleClass="main-title"/>
+
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED">
+        <GridPane hgap="15" vgap="15">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Label text="From Account:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="fromAccountComboBox" promptText="Select Account" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="To Account:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="toAccountComboBox" promptText="Select Account" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Amount:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="amountField" promptText="Amount" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <Button text="Transfer" onAction="#handleTransfer" GridPane.rowIndex="3" GridPane.columnIndex="0" GridPane.columnSpan="2" styleClass="dashboard-button"/>
+            <Button text="Back to Dashboard" onAction="#handleBack" GridPane.rowIndex="4" GridPane.columnIndex="0" GridPane.columnSpan="2" styleClass="dashboard-button"/>
+        </GridPane>
+    </ScrollPane>
+
+</VBox>

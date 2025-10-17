@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="Controller.LoginController" stylesheets="@style.css">
+    <padding>
+        <Insets top="30" bottom="30" left="30" right="30"/>
+    </padding>
+
+    <!-- Page Title -->
+    <Label text="Bank System" styleClass="title"/>
+
+    <!-- Login Section -->
+    <VBox spacing="10" style="-fx-background-color: rgba(255,255,255,0.85); -fx-padding: 20; -fx-background-radius: 15;">
+        <Label text="Login" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+        <TextField fx:id="loginUsernameField" promptText="Username"/>
+        <PasswordField fx:id="loginPasswordField" promptText="Password"/>
+        <Button text="Login" onAction="#handleLogin"/>
+    </VBox>
+
+    <!-- Collapsible Sign-Up Section -->
+    <TitledPane text="Sign Up" expanded="false" collapsible="true">
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" bottom="10" left="10" right="10"/>
+            </padding>
+            <TextField fx:id="signupFirstNameField" promptText="First Name"/>
+            <TextField fx:id="signupLastNameField" promptText="Last Name"/>
+            <TextField fx:id="signupEmailField" promptText="Email"/>
+            <TextField fx:id="signupAddressField" promptText="Address"/>
+            <TextField fx:id="signupUsernameField" promptText="Username"/>
+            <PasswordField fx:id="signupPasswordField" promptText="Password"/>
+            <TextField fx:id="signupNationalIdField" promptText="National ID"/>
+            <Button text="Register" onAction="#handleSignUp"/>
+        </VBox>
+    </TitledPane>
+
+    <!-- Status Label -->
+    <Label fx:id="statusLabel" textFill="red"/>
+</VBox>

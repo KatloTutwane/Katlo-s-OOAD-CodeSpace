@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="Controller.ManageAccountsController"
+      spacing="15"
+      alignment="TOP_CENTER"
+      stylesheets="@style.css"
+      styleClass="root"
+      padding="20">
+
+    <Label text="Manage Accounts" styleClass="main-title"/>
+
+    <TableView fx:id="accountTable" prefHeight="400" prefWidth="700">
+        <columns>
+            <TableColumn fx:id="accIdColumn" text="Account ID" prefWidth="150"/>
+            <TableColumn fx:id="custNameColumn" text="Customer" prefWidth="200"/>
+            <TableColumn fx:id="typeColumn" text="Account Type" prefWidth="150"/>
+            <TableColumn fx:id="balanceColumn" text="Balance" prefWidth="150"/>
+        </columns>
+    </TableView>
+
+    <Button text="Create New Account" onAction="#handleCreateAccount" styleClass="dashboard-button"/>
+</VBox>

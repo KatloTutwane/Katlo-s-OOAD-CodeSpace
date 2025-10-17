@@ -1,0 +1,120 @@
+
+.root {
+    -fx-background-color: linear-gradient(to bottom, #4e54c8, #8f94fb);
+    -fx-padding: 30;
+    -fx-alignment: center;
+    -fx-spacing: 15;
+}
+
+/* Page title */
+.label.title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+/* Status label for errors */
+#statusLabel {
+    -fx-text-fill: #ff4b5c;
+    -fx-font-weight: bold;
+}
+
+/* TextField and PasswordField styling */
+.text-field, .password-field {
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-padding: 8 15;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1px;
+    -fx-font-size: 14px;
+}
+
+/* Focus effect for inputs */
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #ffffff;
+    -fx-border-width: 2px;
+}
+
+/* Button styling  ngwanaka*/
+.button {
+    -fx-background-color: #4e54c8;
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-padding: 8 20;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 2);
+}
+
+
+.button:hover {
+    -fx-background-color: #6c63ff;
+}
+
+/* Sign-up dropdown*/
+.titled-pane > .title {
+    -fx-background-color: #4e54c8;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+}
+
+.titled-pane > .content {
+    -fx-background-color: rgba(255, 255, 255, 0.95);
+    -fx-background-radius: 10;
+    -fx-padding: 15;
+}
+
+
+.titled-pane .vbox {
+    -fx-spacing: 10;
+}
+
+/* Input fields inside TitledPane */
+.titled-pane .text-field, .titled-pane .password-field {
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+}
+
+/* Drop-down arrow styling */
+.titled-pane > .title > .arrow {
+    -fx-background-color: #ffffff;
+}
+
+/* Dashboard title */
+.main-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50; /* match your login theme color */
+}
+
+/* General dashboard buttons */
+.dashboard-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-pref-width: 180px;
+    -fx-pref-height: 100px;
+    -fx-background-radius: 10px;
+}
+
+.dashboard-button:hover {
+    -fx-background-color: #2980b9;
+}
+
+/* Logout button */
+.logout-button {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-pref-width: 180px;
+    -fx-pref-height: 100px;
+    -fx-background-radius: 10px;
+}
+
+.logout-button:hover {
+    -fx-background-color: #c0392b;
+}
+
