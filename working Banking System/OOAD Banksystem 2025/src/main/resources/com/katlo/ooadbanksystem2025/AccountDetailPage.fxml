@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="Controller.AccountDetailController"
+      spacing="20"
+      alignment="TOP_CENTER"
+      stylesheets="@style.css"
+      styleClass="root">
+
+    <Label text="Account Details" styleClass="main-title"/>
+
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED">
+        <GridPane hgap="15" vgap="15">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Label text="Account ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <Label fx:id="accountIdLabel" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Account Type:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <Label fx:id="accountTypeLabel" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Balance:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <Label fx:id="balanceLabel" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <TextField fx:id="depositField" promptText="Deposit Amount" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <Button text="Deposit" onAction="#handleDeposit" GridPane.rowIndex="3" GridPane.columnIndex="1" styleClass="dashboard-button"/>
+
+            <TextField fx:id="withdrawField" promptText="Withdraw Amount" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <Button text="Withdraw" onAction="#handleWithdraw" GridPane.rowIndex="4" GridPane.columnIndex="1" styleClass="dashboard-button"/>
+
+            <Button text="Back to Accounts" onAction="#handleBack" GridPane.rowIndex="5" GridPane.columnIndex="0" GridPane.columnSpan="2" styleClass="dashboard-button"/>
+        </GridPane>
+    </ScrollPane>
+
+</VBox>

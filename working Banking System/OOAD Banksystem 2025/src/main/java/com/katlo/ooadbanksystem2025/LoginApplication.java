@@ -1,0 +1,26 @@
+package com.katlo.ooadbanksystem2025;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+
+public class LoginApplication extends Application {
+
+    @Override
+    public void start(Stage stage) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(
+                "/com/katlo/ooadbanksystem2025/login-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Bank System Login");
+        stage.setScene(scene);
+        stage.setMaximized(true);
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch();
+    }
+}

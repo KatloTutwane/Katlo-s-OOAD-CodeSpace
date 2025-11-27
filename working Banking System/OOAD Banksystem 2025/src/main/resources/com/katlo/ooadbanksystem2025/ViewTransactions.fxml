@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="Controller.ViewTransactionsController"
+      spacing="15"
+      alignment="TOP_CENTER"
+      stylesheets="@style.css"
+      styleClass="root"
+      padding="20">
+
+    <Label text="All Transactions" styleClass="main-title"/>
+
+    <TableView fx:id="transactionTable" prefHeight="400" prefWidth="700">
+        <columns>
+            <TableColumn fx:id="transIdColumn" text="Transaction ID" prefWidth="150"/>
+            <TableColumn fx:id="custNameColumn" text="Customer" prefWidth="200"/>
+            <TableColumn fx:id="accIdColumn" text="Account ID" prefWidth="150"/>
+            <TableColumn fx:id="typeColumn" text="Type" prefWidth="100"/>
+            <TableColumn fx:id="amountColumn" text="Amount" prefWidth="100"/>
+            <TableColumn fx:id="dateColumn" text="Date" prefWidth="150"/>
+        </columns>
+    </TableView>
+</VBox>

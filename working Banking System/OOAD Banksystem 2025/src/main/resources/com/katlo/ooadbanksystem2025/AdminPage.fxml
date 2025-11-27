@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="Controller.AdminDashboardController"
+      spacing="20"
+      alignment="TOP_CENTER"
+      stylesheets="@style.css"
+      styleClass="root">
+
+    <Label text="Admin Dashboard" styleClass="main-title"/>
+
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED">
+        <TilePane hgap="20" vgap="20" prefColumns="2" tileAlignment="CENTER">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Button text="View Customers" onAction="#handleViewCustomers" styleClass="dashboard-button"/>
+            <Button text="Manage Accounts" onAction="#handleManageAccounts" styleClass="dashboard-button"/>
+            <Button text="View Transactions" onAction="#handleViewTransactions" styleClass="dashboard-button"/>
+            <Button text="Statistics" onAction="#handleStatistics" styleClass="dashboard-button"/>
+            <Button text="Logout" onAction="#handleLogout" styleClass="logout-button"/>
+        </TilePane>
+    </ScrollPane>
+
+</VBox>

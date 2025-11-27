@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="Controller.ViewCustomersController"
+      spacing="15"
+      alignment="TOP_CENTER"
+      stylesheets="@style.css"
+      styleClass="root"
+      padding="20">
+
+    <Label text="All Customers" styleClass="main-title"/>
+
+    <TableView fx:id="customerTable" prefHeight="400" prefWidth="600">
+        <columns>
+            <TableColumn fx:id="idColumn" text="Customer ID" prefWidth="150"/>
+            <TableColumn fx:id="firstNameColumn" text="First Name" prefWidth="150"/>
+            <TableColumn fx:id="lastNameColumn" text="Last Name" prefWidth="150"/>
+            <TableColumn fx:id="emailColumn" text="Email" prefWidth="150"/>
+            <TableColumn fx:id="usernameColumn" text="Username" prefWidth="150"/>
+        </columns>
+    </TableView>
+
+</VBox>

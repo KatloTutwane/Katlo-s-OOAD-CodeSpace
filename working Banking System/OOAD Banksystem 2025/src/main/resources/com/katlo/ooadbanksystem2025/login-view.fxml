@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="Controller.LoginController"
+      prefWidth="1200" prefHeight="700"
+      spacing="0"
+      stylesheets="@style.css">
+
+    <!-- LEFT: LOGIN SECTION -->
+    <VBox fx:id="loginPane" HBox.hgrow="ALWAYS" styleClass="login-pane">
+        <StackPane VBox.vgrow="ALWAYS">
+            <VBox alignment="CENTER" spacing="40" maxWidth="400">
+                <!-- Header -->
+                <VBox alignment="CENTER" spacing="10">
+                    <Label text="Welcome Back" styleClass="welcome-title"/>
+                    <Label text="Amogelesega" styleClass="subtitle"/>
+                    <Label text="Sign in to your account" styleClass="instruction-text"/>
+                </VBox>
+
+                <!-- Login Form -->
+                <VBox alignment="CENTER_LEFT" spacing="25" style="-fx-padding: 0 20;">
+                    <VBox spacing="8">
+                        <Label text="Username" styleClass="field-label"/>
+                        <TextField fx:id="loginUsernameField" styleClass="modern-field" promptText="Enter your username"/>
+                    </VBox>
+
+                    <VBox spacing="8">
+                        <Label text="Password" styleClass="field-label"/>
+                        <PasswordField fx:id="loginPasswordField" styleClass="modern-field" promptText="Enter your password"/>
+                    </VBox>
+
+                    <Button text="Sign In" styleClass="login-button" onAction="#handleLogin"/>
+                    <Label fx:id="statusLabel" styleClass="status-label"/>
+                </VBox>
+            </VBox>
+        </StackPane>
+    </VBox>
+
+    <!-- RIGHT: SIGN UP SECTION -->
+    <VBox fx:id="signUpPane" HBox.hgrow="ALWAYS" styleClass="signup-pane">
+        <ScrollPane fitToWidth="true" styleClass="transparent-scroll">
+            <VBox alignment="CENTER" spacing="30" style="-fx-padding: 50;">
+                <!-- Header -->
+                <VBox alignment="CENTER" spacing="10">
+                    <Label text="Create Account" styleClass="signup-title"/>
+                    <Label text="Dira Accounte" styleClass="subtitle"/>
+                    <Label text="Join us today" styleClass="instruction-text"/>
+                </VBox>
+
+                <!-- User Type Selection -->
+                <VBox spacing="15" style="-fx-padding: 0 20;">
+                    <Label text="Customer Type" styleClass="section-label"/>
+                    <HBox spacing="20" alignment="CENTER_LEFT">
+                        <RadioButton fx:id="individualRadio" text="Individual" styleClass="radio-button"/>
+                        <RadioButton fx:id="companyRadio" text="Company" styleClass="radio-button"/>
+                    </HBox>
+                </VBox>
+
+                <!-- Individual Fields -->
+                <VBox spacing="15" style="-fx-padding: 0 20;">
+                    <Label text="Personal Information" styleClass="section-label"/>
+                    <HBox spacing="15">
+                        <VBox spacing="8" HBox.hgrow="ALWAYS">
+                            <Label text="First Name" styleClass="field-label"/>
+                            <TextField fx:id="firstNameField" styleClass="modern-field" promptText="Enter first name"/>
+                        </VBox>
+                        <VBox spacing="8" HBox.hgrow="ALWAYS">
+                            <Label text="Last Name" styleClass="field-label"/>
+                            <TextField fx:id="lastNameField" styleClass="modern-field" promptText="Enter last name"/>
+                        </VBox>
+                    </HBox>
+                    <VBox spacing="8">
+                        <Label text="National ID" styleClass="field-label"/>
+                        <TextField fx:id="nationalIdField" styleClass="modern-field" promptText="Enter national ID"/>
+                    </VBox>
+                </VBox>
+
+                <!-- Company Fields -->
+                <VBox spacing="15" style="-fx-padding: 0 20;">
+                    <Label text="Company Information" styleClass="section-label"/>
+                    <VBox spacing="8">
+                        <Label text="Company Name" styleClass="field-label"/>
+                        <TextField fx:id="companyNameField" styleClass="modern-field" promptText="Enter company name"/>
+                    </VBox>
+                    <VBox spacing="8">
+                        <Label text="Company Address" styleClass="field-label"/>
+                        <TextField fx:id="companyAddressField" styleClass="modern-field" promptText="Enter company address"/>
+                    </VBox>
+                    <HBox spacing="15">
+                        <VBox spacing="8" HBox.hgrow="ALWAYS">
+                            <Label text="Contact First Name" styleClass="field-label"/>
+                            <TextField fx:id="contactFirstNameField" styleClass="modern-field" promptText="First name"/>
+                        </VBox>
+                        <VBox spacing="8" HBox.hgrow="ALWAYS">
+                            <Label text="Contact Last Name" styleClass="field-label"/>
+                            <TextField fx:id="contactLastNameField" styleClass="modern-field" promptText="Last name"/>
+                        </VBox>
+                    </HBox>
+                </VBox>
+
+                <!-- Common Fields -->
+                <VBox spacing="15" style="-fx-padding: 0 20;">
+                    <Label text="Account Details" styleClass="section-label"/>
+                    <VBox spacing="8">
+                        <Label text="Email" styleClass="field-label"/>
+                        <TextField fx:id="emailField" styleClass="modern-field" promptText="Enter your email"/>
+                    </VBox>
+                    <VBox spacing="8">
+                        <Label text="Address" styleClass="field-label"/>
+                        <TextField fx:id="addressField" styleClass="modern-field" promptText="Enter your address"/>
+                    </VBox>
+                    <HBox spacing="15">
+                        <VBox spacing="8" HBox.hgrow="ALWAYS">
+                            <Label text="Username" styleClass="field-label"/>
+                            <TextField fx:id="usernameField" styleClass="modern-field" promptText="Choose username"/>
+                        </VBox>
+                        <VBox spacing="8" HBox.hgrow="ALWAYS">
+                            <Label text="Password" styleClass="field-label"/>
+                            <PasswordField fx:id="passwordField" styleClass="modern-field" promptText="Create password"/>
+                        </VBox>
+                    </HBox>
+                </VBox>
+
+                <!-- Sign Up Button -->
+                <Button text="Create Account" styleClass="signup-button" onAction="#handleSignUp"/>
+            </VBox>
+        </ScrollPane>
+    </VBox>
+
+</HBox>

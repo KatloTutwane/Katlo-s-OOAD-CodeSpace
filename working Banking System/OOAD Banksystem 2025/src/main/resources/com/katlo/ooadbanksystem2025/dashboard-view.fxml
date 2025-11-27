@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="Controller.DashboardController"
+      spacing="0"
+      alignment="TOP_CENTER"
+      stylesheets="@style.css"
+      styleClass="dashboard-root">
+
+    <!-- Header Section -->
+    <VBox styleClass="header-section">
+        <Label fx:id="welcomeLabel" text="Welcome, Customer!" styleClass="main-title"/>
+        <Label text="Manage your banking activities" styleClass="subtitle"/>
+    </VBox>
+
+    <!-- Main Content with Scroll -->
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="dashboard-scroll"
+                hbarPolicy="NEVER" vbarPolicy="AS_NEEDED">
+        <VBox spacing="25" style="-fx-padding: 30;">
+
+            <!-- Quick Actions Section -->
+            <VBox spacing="15">
+                <Label text="Quick Actions" styleClass="section-title"/>
+                <TilePane hgap="20" vgap="20" prefColumns="3" tileAlignment="CENTER">
+                    <VBox alignment="CENTER" spacing="10" styleClass="action-card" onMouseClicked="#handleViewProfile">
+                        <ImageView fitWidth="40" fitHeight="40" styleClass="action-icon">
+                            <Image url="@icons/user_9505872.png" />
+                        </ImageView>
+                        <Label text="View Profile" styleClass="action-label"/>
+                    </VBox>
+
+                    <VBox alignment="CENTER" spacing="10" styleClass="action-card" onMouseClicked="#handleViewAccounts">
+                        <ImageView fitWidth="40" fitHeight="40" styleClass="action-icon">
+                            <Image url="@icons/coin_11263131.png" />
+                        </ImageView>
+                        <Label text="View Accounts" styleClass="action-label"/>
+                    </VBox>
+
+                    <VBox alignment="CENTER" spacing="10" styleClass="action-card" onMouseClicked="#handleCreateAccount">
+                        <ImageView fitWidth="40" fitHeight="40" styleClass="action-icon">
+                            <Image url="@icons/bank-account_18487114.png" />
+                        </ImageView>
+                        <Label text="Create Account" styleClass="action-label"/>
+                    </VBox>
+
+                    <VBox alignment="CENTER" spacing="10" styleClass="action-card" onMouseClicked="#handleTransactionHistory">
+                        <ImageView fitWidth="40" fitHeight="40" styleClass="action-icon">
+                            <Image url="@icons/history.png" />
+                        </ImageView>
+                        <Label text="Transaction History" styleClass="action-label"/>
+                    </VBox>
+
+                    <VBox alignment="CENTER" spacing="10" styleClass="action-card" onMouseClicked="#handleTransferFunds">
+                        <ImageView fitWidth="40" fitHeight="40" styleClass="action-icon">
+                            <Image url="@icons/transfer.png" />
+                        </ImageView>
+                        <Label text="Transfer Funds" styleClass="action-label"/>
+                    </VBox>
+
+                    <VBox alignment="CENTER" spacing="10" styleClass="action-card" onMouseClicked="#handleLogout">
+                        <ImageView fitWidth="40" fitHeight="40" styleClass="action-icon logout-icon">
+                            <Image url="@icons/Logout.jpeg" />
+                        </ImageView>
+                        <Label text="Logout" styleClass="action-label logout-label"/>
+                    </VBox>
+                </TilePane>
+            </VBox>
+
+            <!-- Recent Activity Section -->
+            <VBox spacing="15">
+                <Label text="Recent Activity" styleClass="section-title"/>
+                <VBox styleClass="activity-container">
+                    <HBox alignment="CENTER_LEFT" styleClass="activity-item">
+                        <ImageView fitWidth="20" fitHeight="20" styleClass="activity-icon"/>
+                        <VBox HBox.hgrow="ALWAYS">
+                            <Label text="Account Login" styleClass="activity-title"/>
+                            <Label text="Just now" styleClass="activity-time"/>
+                        </VBox>
+                        <Label text="Successful" styleClass="activity-status success"/>
+                    </HBox>
+
+                    <HBox alignment="CENTER_LEFT" styleClass="activity-item">
+                        <ImageView fitWidth="20" fitHeight="20" styleClass="activity-icon"/>
+                        <VBox HBox.hgrow="ALWAYS">
+                            <Label text="Balance Check" styleClass="activity-title"/>
+                            <Label text="2 hours ago" styleClass="activity-time"/>
+                        </VBox>
+                        <Label text="Completed" styleClass="activity-status success"/>
+                    </HBox>
+                </VBox>
+            </VBox>
+
+            <!-- Account Summary Section -->
+            <!--<VBox spacing="15">
+                <Label text="Account Summary" styleClass="section-title"/>
+                <HBox spacing="20" alignment="CENTER">
+                    <VBox alignment="CENTER" styleClass="summary-card">
+                        <Label text="Total Balance" styleClass="summary-label"/>
+                        <Label text="$12,450.00" styleClass="summary-amount"/>
+                    </VBox>
+                    <VBox alignment="CENTER" styleClass="summary-card">
+                        <Label text="Active Accounts" styleClass="summary-label"/>
+                        <Label text="3" styleClass="summary-amount"/>
+                    </VBox>
+                    <VBox alignment="CENTER" styleClass="summary-card">
+                        <Label text="This Month" styleClass="summary-label"/>
+                        <Label text="15 Transactions" styleClass="summary-amount"/>
+                    </VBox>
+                </HBox>
+            </VBox>-->
+
+        </VBox>
+    </ScrollPane>
+
+</VBox>

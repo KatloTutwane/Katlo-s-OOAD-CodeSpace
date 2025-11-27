@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="Controller.TransferFundsController"
+      spacing="0"
+      alignment="TOP_CENTER"
+      stylesheets="@style.css"
+      styleClass="root">
+
+    <!-- Header Section matching dashboard -->
+    <VBox styleClass="header-section" VBox.vgrow="NEVER">
+        <Label text="Transfer Funds" styleClass="main-title"/>
+        <Label text="Securely transfer money between your accounts" styleClass="subtitle"/>
+    </VBox>
+
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" styleClass="scroll-pane" VBox.vgrow="ALWAYS">
+        <VBox spacing="30" alignment="CENTER" styleClass="form-container">
+            <padding>
+                <Insets top="40" right="50" bottom="40" left="50"/>
+            </padding>
+
+            <GridPane hgap="25" vgap="30" alignment="CENTER">
+                <padding>
+                    <Insets top="20" right="0" bottom="20" left="0"/>
+                </padding>
+
+                <!-- From Account Section -->
+                <VBox spacing="8" GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="2">
+                    <Label text="FROM ACCOUNT" styleClass="section-header"/>
+                </VBox>
+
+                <Label text="Select Source Account:" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="form-label"/>
+                <ComboBox fx:id="fromAccountComboBox" promptText="Choose account to transfer from"
+                          GridPane.rowIndex="1" GridPane.columnIndex="1" styleClass="form-combo"
+                          prefWidth="300"/>
+
+                <!-- To Account Section -->
+                <VBox spacing="8" GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="2">
+                    <Label text="TO ACCOUNT" styleClass="section-header"/>
+                </VBox>
+
+                <Label text="Select Destination Account:" GridPane.rowIndex="3" GridPane.columnIndex="0" styleClass="form-label"/>
+                <ComboBox fx:id="toAccountComboBox" promptText="Choose account to transfer to"
+                          GridPane.rowIndex="3" GridPane.columnIndex="1" styleClass="form-combo"
+                          prefWidth="300"/>
+
+                <!-- Amount Section -->
+                <VBox spacing="8" GridPane.rowIndex="4" GridPane.columnIndex="0" GridPane.columnSpan="2">
+                    <Label text="TRANSFER AMOUNT" styleClass="section-header"/>
+                </VBox>
+
+                <Label text="Enter Amount:" GridPane.rowIndex="5" GridPane.columnIndex="0" styleClass="form-label"/>
+                <TextField fx:id="amountField" promptText="0.00"
+                           GridPane.rowIndex="5" GridPane.columnIndex="1" styleClass="form-input"
+                           prefWidth="300"/>
+
+                <!-- Buttons -->
+                <VBox spacing="15" alignment="CENTER" GridPane.rowIndex="6" GridPane.columnIndex="0" GridPane.columnSpan="2">
+                    <Button text="💸 Transfer Funds" onAction="#handleTransfer"
+                            styleClass="dashboard-button" prefWidth="350"/>
+                    <Button text="← Back to Dashboard" onAction="#handleBack"
+                            styleClass="dashboard-button" prefWidth="350"/>
+                </VBox>
+            </GridPane>
+        </VBox>
+    </ScrollPane>
+
+</VBox>
